@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 50s
+  evaluation_interval: 60s
+  scrape_timeout: 50s
+  
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: [ 'localhost:9090' ]
+  - job_name: 'nginx'
+    metrics_path: /metrics # Примечание. Если не указать metrics_path, то применится стандартный путь /metrics 
+    static_configs:
+    - targets: [ 'exporter:9113' ] # Заменили источник метрик на exporter
+  - job_name: 'grafana'
+    metrics_path: /metrics
+    static_configs:
+      - targets: [ 'grafana:3000' ]

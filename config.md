@@ -12,3 +12,4 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.23.0/docker
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+https://81ae-74-220-27-36.ngrok-free.app
